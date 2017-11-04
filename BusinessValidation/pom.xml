@@ -21,11 +21,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!-- dependency>
     	<groupId>aoj</groupId>
     	<artifactId>aspecto</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+    </dependency -->
     <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
 <dependency>
     <groupId>org.aspectj</groupId>

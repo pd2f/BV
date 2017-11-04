@@ -30,6 +30,7 @@ public class App {
 	public static void validar(Object obj) {
 		try {
 			Object[] arr = { new String("std") };
+			@SuppressWarnings("rawtypes")
 			Class clazz = obj.getClass();
 			for (Method m : clazz.getDeclaredMethods()) {
 				if (m.isAnnotationPresent(Validate.class)) {
