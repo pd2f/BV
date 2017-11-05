@@ -1,15 +1,31 @@
-package validate.service.impl.teste;
+package validate.service.impl;
 
 import java.util.List;
 
-import validate.interfaces.ServicesValidates;
+import validate.interfaces.ServicesValidator;
 
-public class ServicesValidatesImpl implements ServicesValidates {
+/**
+ * Classe abstrata que implementa a interface de serviço de validação.
+ * 
+ * É requerido que o controle da aplicação instancie e forneça o resultado a ser validado
+ * à instância; preferencialmente usando o construtor. 
+ * O serviço que herdará a implementação {@linkplain ServicesValidatorImpl}
+ * deverá fornecer a lista de resultados ou critérios válidos. 
+ * 
+ * @author pfranco
+ *
+ * @category Validação (Validar Produto ou Componente de Produto)
+ */
+public abstract class ServicesValidatorImpl implements ServicesValidator {
 
-	private List<?> listaproduzida, listavalida;
+	private List<?> listaproduzida;
 
+	public ServicesValidatorImpl(List<?> lista) {
+		this.setListaProduzida(lista);
+	}
+	
 	@Override
-	public Boolean valid() {
+	public final Boolean valid() {
 		if (this.getListaValida() == null || this.getListaProduzida() == null)
 			return Boolean.FALSE;
 
@@ -19,9 +35,7 @@ public class ServicesValidatesImpl implements ServicesValidates {
 	}
 
 	@Override
-	public List<?> getListaValida() {
-		return this.listavalida;
-	}
+	public abstract List<?> getListaValida();
 
 	@Override
 	public List<?> getListaProduzida() {

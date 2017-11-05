@@ -3,8 +3,8 @@ package validate.factory;
 import java.util.ArrayList;
 import java.util.List;
 
-import validate.interfaces.ServicesValidates;
-import validate.service.impl.teste.ServicesValidatesImpl;
+import validate.interfaces.ServicesValidator;
+import validate.service.impl.teste.ServiceValorTeste;
 
 public class Teste {
 
@@ -17,10 +17,7 @@ public class Teste {
 
 		}
 		
-		ServicesValidates val = new ServicesValidatesImpl();
-		
-		val.setListaProduzida(lt);
-		
+		ServicesValidator val = new ServiceValorTeste(lt);
 		System.out.println(val.valid());
 
 	}

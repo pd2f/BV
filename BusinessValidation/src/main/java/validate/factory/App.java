@@ -1,12 +1,14 @@
 package validate.factory;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
-import validate.annotation.Validate;
 import validate.business.impl.teste.AplicationClientClass;
 import validate.business.impl.teste.ValidacaoTesteAnnotation;
+import validate.controller.ValidateController;
 import validate.interfaces.BusinessValidation;
+import validate.interfaces.ServicesValidator;
+import validate.service.impl.teste.ServiceValorTeste;
 
 /**
  * Hello world!
@@ -19,33 +21,24 @@ public class App {
 		aplicacao.execution("Teste de Mensagem anotacao");
 		aplicacao.nonExecution("Teste de Mensamgem nonanotacao");
 		BusinessValidation bv = new ValidacaoTesteAnnotation();
-		validar(bv);
+		ValidateController.validar(bv);
 		BusinessValidation val = new AplicationClientClass();
 		System.out.println("--------------------------------------");
-		validar(val);
+		ValidateController.validar(val);
 		System.out.println("--------------------------------------");
 
-	}
+		Integer[] inteiros = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		List<Integer> lt = new ArrayList<>();
 
-	public static void validar(Object obj) {
-		try {
-			Object[] arr = { new String("std") };
-			@SuppressWarnings("rawtypes")
-			Class clazz = obj.getClass();
-			for (Method m : clazz.getDeclaredMethods()) {
-				if (m.isAnnotationPresent(Validate.class)) {
-					System.out.println("identificador = " + m.getAnnotation(Validate.class).identificador());
-					if (m.getParameterCount() >= 1)
-						System.out.println(m.getName() + ": " + m.invoke(obj, arr));
-					else
-						System.out.println(m.getName() + ": " + m.invoke(obj));
+		for (Integer integer : inteiros) {
+			lt.add(integer);
 
-				}
-			}
-		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
+
+		ServicesValidator sv = new ServiceValorTeste(lt);
+
+		ValidateController.validar(sv);
+
 	}
 
 }
