@@ -13,22 +13,22 @@ public enum ProcessosENUM {
 /**
  * Constante ENUM que provê informações necessárias para providências programáticas do sistema ou subsistema a serem validados.
  */
-	TESTE(101L, "Utilizado para testes do software", 0L);
+	TESTE(101, "Utilizado para testes do software", 0L);
 
-	private final Long processos;
+	private final Integer processos;
 	private final String descricao;
 	private final Long tipo;
 
-	ProcessosENUM(Long processo, String desc, Long tipo) {
+	ProcessosENUM(Integer processo, String desc, Long tipo) {
 		this.processos = processo;
 		this.descricao = desc;
 		this.tipo = tipo;
 	}
 /**
  * Retorna o identificador do processo
- * @return {@link Long} testes
+ * @return {@link Integer} testes
  */
-	public Long getIdentificador() {
+	public Integer getIdentificador() {
 		return this.processos;
 	}
 /**

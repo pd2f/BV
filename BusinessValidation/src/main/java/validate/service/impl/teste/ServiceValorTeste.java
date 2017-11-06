@@ -13,7 +13,7 @@ public class ServiceValorTeste extends ServicesValidatorImpl {
 		super(lista);
 	}
 
-	@Validate(identificador=150)
+	@Validate(identificador=101)
 	@Override
 	public List<?> getListaValida() {
 		Integer[] inteiros = { 1, 2, 3, 4, 5, 6, 7, 8, 9,10 };
