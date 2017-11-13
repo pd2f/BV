@@ -1,4 +1,4 @@
-package validate.factory;
+package br.com.tecnoestrutura.b2v.receiver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +11,13 @@ import validate.interfaces.BusinessValidation;
 import validate.interfaces.ServicesValidator;
 import validate.service.impl.teste.ServiceValorTeste;
 
+
 /**
- * Hello world!
+ * 
+ * @author pfranco
  *
  */
-public class App {
+public class B2VReceiver {
 	public static void main(String[] args) {
 //		System.out.println("Hello World!");
 //		AplicationClientClass aplicacao = new AplicationClientClass();

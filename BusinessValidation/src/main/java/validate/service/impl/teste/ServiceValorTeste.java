@@ -27,5 +27,4 @@ public class ServiceValorTeste extends ServicesValidatorImpl {
 		return lt;
 	}
 
-
 }

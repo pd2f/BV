@@ -1,4 +1,4 @@
-package validate.factory;
+package br.com.tecnoestrutura.b2v.receiver;
 
 import java.util.ArrayList;
 import java.util.List;

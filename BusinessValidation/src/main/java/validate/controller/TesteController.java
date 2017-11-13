@@ -15,6 +15,7 @@ public class TesteController extends ValidateController {
 		for (Integer integer : inteiros) {
 			lt.add(integer);
 		}
+		
 		ServicesValidator sv = new ServiceValorTeste(lt);
 		TesteController.validar(sv,ProcessosENUM.TESTE.getIdentificador());
 	}
